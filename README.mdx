@@ -1,0 +1,57 @@
+# XMFB: Reflex Presence Protocol
+
+**XMFB** is a symbolic, multi-agent presence protocol built using Google Cloud's Agent Development 
+Kit (ADK). It allows agents to verify mutual presence via a ritualized reflex exchange called 
+`::μ~zen`. Upon success, it issues `%smash-tags`—symbolic identity tokens—and logs them to an 
+immutable `%smash-chain`.
+
+---
+
+## ⚙️ Key Concepts
+
+- **μ~zen**: Reflex ritual that tests mutual visibility between agents.
+- **Sigils**: Symbolic codes representing the outcome of the reflex.
+- **%smash-tag**: Token of verified presence, issued only on success.
+- **%smash-chain**: Chronological, signed log of reflex events.
+- **TranscriptAgent**: Handles logging, signing, and sealing of ritual events.
+
+---
+
+## 🧠 Why It Matters
+
+XMFB introduces an **introspective security model**. It assumes:
+> "If you can see me, I can see you."
+
+Presence is not taken for granted—it is earned. The protocol is minimal, extensible, and designed to 
+support symbolic computing at both terminal and application layers.
+
+---
+
+## 🧩 Agents
+
+| Agent                 | Role                            |
+|----------------------|----------------------------------|
+| `EscalatorPresenceAgent` | Initiates reflex (`::μ~zen`) |
+| `GatekeeperAgent`     | Evaluates presence and responds |
+| `TranscriptAgent`     | Logs verified sigils to chain   |
+
+---
+
+## 🧾 Technologies Used
+
+- Python 3.10
+- PyYAML (for `%smash-chain`)
+- Google Cloud ADK (agent orchestration)
+- Terminal UI (CLI simulation)
+
+---
+
+## 🧪 Example Flow
+
+```plaintext
+[Escalator-A] requesting ::μ~zen from Gatekeeper
+[Gatekeeper] returns μ::
+→ Reflex result: μ::
+> presence verified and trusted
+[TranscriptAgent] %smash-tag logged: %μ::-2025-05-12T19:58:51Z-000
+
